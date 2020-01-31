@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.zzy.dao.TeacherDao">
+  <resultMap type="com.zzy.bean.Teacher" id="teachermap">
+  		<id property="id" column="id"/>
+  		<result property="name" column="teachername"/>
+  		<result property="course" column="classname"/>
+  		<result property="address" column="address"/>
+  		<result property="birth" column="birthdate"/>
+  </resultMap>
+  	<select id="getTeacherById" resultMap="teachermap">
+  		select * from t_teacher where id=#{id}
+  	</select>
+  	
+  </mapper>
